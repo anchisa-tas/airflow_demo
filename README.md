@@ -1,6 +1,6 @@
 # airflow_demo
 Create a data pipeline that uses the `sampledata.py` script to generate data and load it into a PostgreSQL database. 
-The pipeline will be managed with Airflow, and the whole project will run in Docker.
+The pipeline will be managed with Airflow using Airflow docker with LocalExecutor. The airflow docker image is built based on Apache Airflow 3.x as in the official guideline [here](https://airflow.apache.org/docs/apache-airflow/3.0.5/howto/docker-compose/index.html). 
 
 ## Folder Structure
 - /dags/ : keep DAG pipeline file.
@@ -10,6 +10,24 @@ The pipeline will be managed with Airflow, and the whole project will run in Doc
 ## Prerequisite
 - Docker with Memory >= 10GB
 - Make sure port 5432 and 8080 are available for postgres and airflow apiserver
+
+## Database diagram
+The database diagram defined as below\
+or equilavant sql can be found in /sql (Simplified for demo only, can add index or partition if needed later) 
+
+```mermaid
+erDiagram
+    sensor_log {
+        varchar department_name
+        varchar sensor_serial
+        timestamp create_at
+        varchar product_name
+        timestamp product_expire
+    }
+```
+
+## Video Record 
+The video of pipeline can be found here : [GGDrive](https://drive.google.com/drive/folders/1tDO5RGfJ0BgpT9Fc5uDFaqRPUOUfrqbx?usp=sharing) 
 
 ## Step to Run 
 1) Clone github repository to your local machine.
@@ -28,7 +46,3 @@ The pipeline will be managed with Airflow, and the whole project will run in Doc
 
 ## Cleaning up
 To stop and delete containers, delete volumes with database data and download images, run: `docker compose down --volumes --rmi all` ([Ref](https://airflow.apache.org/docs/apache-airflow/3.0.5/howto/docker-compose/index.html#cleaning-up))
-
-## Video Record & Database diagram
-The video of pipeline & the database diagramrun can be found here : [GGDrive](https://drive.google.com/drive/folders/1tDO5RGfJ0BgpT9Fc5uDFaqRPUOUfrqbx?usp=sharing) \
-or equilavant sql can be found in /sql - Simplified for demo only, can add index or partition if needed later 
