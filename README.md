@@ -27,7 +27,7 @@ erDiagram
 ```
 
 ## Video Record 
-The video of pipeline can be found here : [GGDrive](https://drive.google.com/drive/folders/1tDO5RGfJ0BgpT9Fc5uDFaqRPUOUfrqbx?usp=sharing) 
+The video of pipeline can be found [here](https://drive.google.com/drive/folders/1tDO5RGfJ0BgpT9Fc5uDFaqRPUOUfrqbx?usp=sharing) 
 
 ## Step to Run 
 1) Clone github repository to your local machine.
